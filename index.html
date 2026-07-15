@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>46ª Semad 2026 — Semana do Administrador | DAD/UEM</title>
+<meta name="description" content="46ª Semana do Administrador — DAD/UEM. Submissão de trabalhos de 15/07 a 14/08/2026. Evento de 14 a 18 de setembro de 2026, Maringá-PR. ISSN 1518-5354.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#1B2154;
+  --tinta-claro:#2A3270;
+  --papel:#FBFAF7;
+  --grafite:#31373D;
+  --cinza:#6B7280;
+  --linha:#DDD8CE;
+  --ouro:#F2C31C;
+  --ouro-claro:#FFF8DC;
+  --verde:#2F7D4F;
+  --vermelho:#B3402E;
+  --branco:#FFFFFF;
+  --ciano:#3EC6D0;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans',sans-serif;background:var(--papel);color:var(--grafite);line-height:1.6;font-size:16px}
+h1,h2,h3{font-family:'IBM Plex Serif',serif;color:var(--tinta)}
+.mono{font-family:'IBM Plex Mono',monospace}
+.container{max-width:960px;margin:0 auto;padding:0 24px}
+
+/* ---------- topo ---------- */
+header{background:var(--tinta);color:var(--branco);padding:64px 0 56px;position:relative;overflow:hidden}
+header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--ouro)}
+.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ouro);margin-bottom:14px}
+header h1{color:var(--branco);font-size:clamp(30px,5vw,46px);line-height:1.15;font-weight:700;max-width:720px}
+header .sub{margin-top:12px;font-size:17px;color:#C9D4E2;max-width:640px}
+.tema{margin-top:16px;font-family:'IBM Plex Serif',serif;font-size:18px;color:var(--ouro);font-style:italic;max-width:640px}
+.issn{display:inline-block;margin-top:16px;border:2px solid var(--ouro);color:var(--ouro);padding:4px 14px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;border-radius:4px}
+.datas-topo{margin-top:28px;display:flex;gap:28px;flex-wrap:wrap}
+.datas-topo div{border-left:3px solid var(--ouro);padding-left:12px}
+.datas-topo .rotulo{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#9DB0C6}
+.datas-topo .valor{font-family:'IBM Plex Serif',serif;font-size:19px;font-weight:600;color:var(--branco)}
+nav{background:var(--branco);border-bottom:1px solid var(--linha);position:sticky;top:0;z-index:50}
+nav .container{display:flex;gap:4px;overflow-x:auto}
+nav a{padding:14px 16px;font-size:14px;font-weight:500;color:var(--grafite);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent}
+nav a:hover,nav a:focus-visible{color:var(--tinta);border-bottom-color:var(--ouro);outline:none}
+
+/* ---------- seções ---------- */
+section{padding:56px 0}
+section+section{border-top:1px solid var(--linha)}
+h2{font-size:27px;margin-bottom:8px}
+.h2-sub{color:var(--cinza);margin-bottom:28px;max-width:640px}
+
+/* ---------- cronograma ---------- */
+.cronograma{list-style:none;max-width:640px}
+.cronograma li{display:flex;gap:18px;padding:13px 0;border-bottom:1px dashed var(--linha);align-items:baseline}
+.cronograma .data{font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;color:var(--tinta);min-width:150px}
+.cronograma .destaque .data,.cronograma .destaque .etapa{color:var(--ouro);font-weight:600}
+
+/* ---------- categorias ---------- */
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:640px}
+.cat-card{border:2px solid var(--ouro);border-radius:8px;padding:18px}
+.cat-card h3{color:var(--ouro);font-size:18px;margin-bottom:6px}
+.cat-card p{font-size:14px;color:var(--cinza)}
+
+/* ---------- áreas (lista simples) ---------- */
+.areas-list{list-style:none;max-width:640px}
+.areas-list li{padding:10px 0;border-bottom:1px solid var(--linha);display:flex;gap:12px;align-items:baseline}
+.areas-list .num{font-family:'IBM Plex Serif',serif;font-size:22px;font-weight:600;color:var(--ouro);min-width:32px}
+
+/* ---------- formulários ---------- */
+.card{background:var(--branco);border:1px solid var(--linha);border-radius:8px;padding:32px;max-width:720px}
+label{display:block;font-size:14px;font-weight:600;color:var(--tinta);margin:18px 0 6px}
+label .opc{font-weight:400;color:var(--cinza)}
+input[type=text],input[type=email],select,textarea{
+  width:100%;padding:10px 12px;border:1px solid var(--linha);border-radius:6px;
+  font-family:'IBM Plex Sans',sans-serif;font-size:15px;background:var(--papel);color:var(--grafite)
+}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--tinta-claro);outline-offset:1px;border-color:var(--tinta-claro)}
+textarea{min-height:120px;resize:vertical}
+.hint{font-size:13px;color:var(--cinza);margin-top:4px}
+.autor-bloco{border:1px dashed var(--linha);border-radius:6px;padding:14px 16px 18px;margin-top:10px;position:relative}
+.autor-bloco .tag{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ouro);text-transform:uppercase;letter-spacing:.08em}
+.remover-autor{position:absolute;top:10px;right:12px;background:none;border:none;color:var(--vermelho);cursor:pointer;font-size:13px;font-family:inherit}
+.botao{display:inline-block;background:var(--tinta);color:var(--branco);border:none;border-radius:6px;
+  padding:13px 26px;font-size:15px;font-weight:600;font-family:'IBM Plex Sans',sans-serif;cursor:pointer;margin-top:24px}
+.botao:hover{background:var(--tinta-claro)}
+.botao:focus-visible{outline:3px solid var(--ouro);outline-offset:2px}
+.botao[disabled]{opacity:.55;cursor:wait}
+.botao-sec{background:none;border:1px solid var(--tinta);color:var(--tinta);border-radius:6px;
+  padding:9px 16px;font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;margin-top:12px}
+.botao-sec:hover{background:var(--ouro-claro)}
+.aviso{background:var(--ouro-claro);border-left:3px solid var(--ouro);padding:14px 16px;border-radius:0 6px 6px 0;font-size:14px;margin:20px 0}
+.msg-ok{background:#E8F3EC;border-left:3px solid var(--verde);padding:16px;border-radius:0 6px 6px 0;margin-top:20px}
+.msg-erro{background:#FBEAE6;border-left:3px solid var(--vermelho);padding:16px;border-radius:0 6px 6px 0;margin-top:20px;font-size:14px}
+.msg-ok .id{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:600;color:var(--tinta);display:block;margin:6px 0}
+.check-linha{display:flex;gap:10px;align-items:flex-start;margin-top:18px;font-size:14px}
+.check-linha input{margin-top:4px}
+.criterio-bloco{padding:12px 0;border-bottom:1px dashed var(--linha)}
+.criterio-bloco .criterio{font-size:14px;font-weight:600;color:var(--tinta);display:block;margin-bottom:6px}
+.criterio-bloco select{max-width:220px}
+.status-caixa{margin-top:18px;padding:18px;background:var(--papel);border:1px solid var(--linha);border-radius:6px;font-size:15px}
+.status-caixa strong{color:var(--tinta)}
+.download-link{display:inline-flex;align-items:center;gap:8px;background:var(--ouro);color:var(--tinta);padding:10px 20px;border-radius:6px;text-decoration:none;font-weight:600;font-size:14px;margin-top:12px}
+.download-link:hover{opacity:.9}
+
+footer{background:var(--tinta);color:#9DB0C6;padding:36px 0;font-size:14px;margin-top:40px}
+footer strong{color:var(--branco)}
+footer a{color:var(--ouro)}
+
+@media(max-width:640px){
+  .cat-grid{grid-template-columns:1fr}
+  .card{padding:22px}
+  .cronograma li{flex-direction:column;gap:2px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <p class="eyebrow">DAD · CaaD · Universidade Estadual de Maringá</p>
+    <h1>46ª Semana do Administrador</h1>
+    <p class="sub">Semad — Departamento de Administração / UEM</p>
+    <p class="tema">"Análise de dados e tomada de decisão na era da informação"</p>
+    <span class="issn">ISSN 1518-5354</span>
+    <div class="datas-topo">
+      <div><div class="rotulo">Evento</div><div class="valor">14 a 18 · set · 2026</div></div>
+      <div><div class="rotulo">Submissões</div><div class="valor">15/07 → 14/08</div></div>
+      <div><div class="rotulo">Local</div><div class="valor">UEM · Maringá-PR</div></div>
+    </div>
+  </div>
+</header>
+
+<nav aria-label="Seções do site">
+  <div class="container">
+    <a href="#datas">Datas</a>
+    <a href="#categorias">Categorias</a>
+    <a href="#areas">Áreas temáticas</a>
+    <a href="#normas">Normas</a>
+    <a href="#submeter">Submeter trabalho</a>
+    <a href="#status">Consultar status</a>
+    <a href="#avaliador">Área do avaliador</a>
+    <a href="https://dad.uem.br/semad/45a-semad" target="_blank">Edições anteriores</a>
+  </div>
+</nav>
+
+<!-- ==================== DATAS ==================== -->
+<section id="datas">
+  <div class="container">
+    <h2>Datas importantes</h2>
+    <p class="h2-sub">Calendário oficial da 46ª Semad 2026.</p>
+    <ul class="cronograma">
+      <li><span class="data mono">15/07/2026</span><span class="etapa">Abertura das submissões</span></li>
+      <li class="destaque"><span class="data mono">14/08/2026</span><span class="etapa">Data-limite para submissão de trabalhos</span></li>
+      <li><span class="data mono">17/08 – 03/09</span><span class="etapa">Avaliação dos trabalhos pelos pareceristas</span></li>
+      <li><span class="data mono">04/09/2026</span><span class="etapa">Divulgação dos resultados</span></li>
+      <li><span class="data mono">09/09/2026</span><span class="etapa">Início das inscrições dos autores</span></li>
+      <li class="destaque"><span class="data mono">14–18/09/2026</span><span class="etapa">Realização da 46ª Semad</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== CATEGORIAS ==================== -->
+<section id="categorias">
+  <div class="container">
+    <h2>Categorias de participação</h2>
+    <p class="h2-sub">Selecione, no momento da submissão, a categoria correspondente ao seu trabalho.</p>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <h3>Graduação</h3>
+        <p>Artigos realizados preponderantemente por alunos de graduação, que atuaram diretamente em todas as partes da pesquisa e tiveram orientações de seus professores orientadores.</p>
+      </div>
+      <div class="cat-card">
+        <h3>Pós-Graduação</h3>
+        <p>Artigos que possuam alunos de pós-graduação como autores ou coautores, que atuaram de forma a potencializar o nível do artigo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ÁREAS ==================== -->
+<section id="areas">
+  <div class="container">
+    <h2>Áreas temáticas</h2>
+    <p class="h2-sub">Escolha a área que melhor dialoga com o seu trabalho.</p>
+    <ul class="areas-list">
+      <li><span class="num">1</span><span>Administração da Produção</span></li>
+      <li><span class="num">2</span><span>Administração Financeira</span></li>
+      <li><span class="num">3</span><span>Administração de Recursos Humanos</span></li>
+      <li><span class="num">4</span><span>Administração de Marketing</span></li>
+      <li><span class="num">5</span><span>Administração Pública</span></li>
+      <li><span class="num">6</span><span>Administração Ambiental</span></li>
+      <li><span class="num">7</span><span>Estudos Organizacionais</span></li>
+      <li><span class="num">8</span><span>Ensino e Pesquisa em Administração</span></li>
+      <li><span class="num">9</span><span>Empreendedorismo e Inovação</span></li>
+      <li><span class="num">10</span><span>Estratégia Organizacional</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ==================== NORMAS ==================== -->
+<section id="normas">
+  <div class="container">
+    <h2>Normas de submissão</h2>
+    <p class="h2-sub">Leia com atenção antes de enviar o trabalho.</p>
+    <div class="card">
+      <p><strong>Modalidade:</strong> Artigo Completo, com extensão entre 6 (seis) e 18 (dezoito) páginas.</p>
+      <p style="margin-top:12px"><strong>Formato do arquivo:</strong> PDF, com no máximo 10 MB.</p>
+      <p style="margin-top:12px"><strong>Template:</strong> utilize o modelo oficial de formatação para preparar o seu artigo.</p>
+      <a class="download-link" href="SEMAD_Modelo de artigo_2026.docx" download>⬇ Baixar template de submissão (.docx)</a>
+      <p style="margin-top:18px"><strong>Avaliação cega:</strong> o arquivo enviado <strong>não pode conter identificação dos autores</strong> — remova nomes, filiações, agradecimentos e propriedades do documento que identifiquem a autoria.</p>
+      <p style="margin-top:12px"><strong>Avaliação:</strong> cada trabalho será avaliado por dois pareceristas da área temática indicada, no sistema double-blind review.</p>
+      <p style="margin-top:12px"><strong>Publicação:</strong> os trabalhos aprovados e apresentados no evento serão publicados nos Anais da 46ª Semad (ISSN 1518-5354).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SUBMISSÃO ==================== -->
+<section id="submeter">
+  <div class="container">
+    <h2>Submeter trabalho</h2>
+    <p class="h2-sub">Preencha os dados abaixo. Após o envio, você receberá um ID de acompanhamento por e-mail.</p>
+
+    <div class="card">
+      <div id="form-submissao">
+        <label for="categoria">Categoria *</label>
+        <select id="categoria" required>
+          <option value="">Selecione…</option>
+          <option>Graduação</option>
+          <option>Pós-Graduação</option>
+        </select>
+
+        <label for="area">Área temática *</label>
+        <select id="area" required>
+          <option value="">Selecione…</option>
+          <option>1. Administração da Produção</option>
+          <option>2. Administração Financeira</option>
+          <option>3. Administração de Recursos Humanos</option>
+          <option>4. Administração de Marketing</option>
+          <option>5. Administração Pública</option>
+          <option>6. Administração Ambiental</option>
+          <option>7. Estudos Organizacionais</option>
+          <option>8. Ensino e Pesquisa em Administração</option>
+          <option>9. Empreendedorismo e Inovação</option>
+          <option>10. Estratégia Organizacional</option>
+        </select>
+
+        <label for="titulo">Título do trabalho *</label>
+        <input type="text" id="titulo" maxlength="300" required>
+
+        <label for="resumo">Resumo *</label>
+        <textarea id="resumo" maxlength="3000" required></textarea>
+        <p class="hint">Cole aqui o resumo do trabalho (até 3.000 caracteres).</p>
+
+        <label for="palavras">Palavras-chave <span class="opc">(separadas por ponto e vírgula)</span></label>
+        <input type="text" id="palavras" maxlength="300" placeholder="ex.: estratégia; inovação; PME">
+
+        <label>Autores *</label>
+        <p class="hint" style="margin-bottom:6px">O primeiro autor será o contato principal e receberá as comunicações do evento.</p>
+        <div id="autores"></div>
+        <button type="button" class="botao-sec" onclick="adicionarAutor()">+ Adicionar autor</button>
+
+        <label for="arquivo">Arquivo do trabalho (PDF, sem identificação dos autores) *</label>
+        <input type="file" id="arquivo" accept="application/pdf" required>
+        <p class="hint">Máximo 10 MB. Apenas PDF. Entre 6 e 18 páginas.</p>
+
+        <div class="check-linha">
+          <input type="checkbox" id="decl-cega">
+          <label for="decl-cega" style="margin:0;font-weight:400">Declaro que o arquivo enviado não contém identificação dos autores, conforme exigido para a avaliação cega. *</label>
+        </div>
+        <div class="check-linha">
+          <input type="checkbox" id="decl-normas">
+          <label for="decl-normas" style="margin:0;font-weight:400">Declaro estar ciente das normas de submissão da 46ª Semad 2026. *</label>
+        </div>
+
+        <button type="button" class="botao" id="btn-enviar" onclick="enviarSubmissao()">Enviar trabalho</button>
+        <div id="resultado-submissao"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONSULTA DE STATUS ==================== -->
+<section id="status">
+  <div class="container">
+    <h2>Consultar status</h2>
+    <p class="h2-sub">Informe o ID recebido por e-mail (ex.: SEMAD46-001).</p>
+    <div class="card">
+      <label for="input-id">ID do trabalho</label>
+      <input type="text" id="input-id" class="mono" placeholder="SEMAD46-000">
+      <button type="button" class="botao" onclick="consultarStatus()">Consultar</button>
+      <div id="resultado-status"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ÁREA DO AVALIADOR ==================== -->
+<section id="avaliador">
+  <div class="container">
+    <h2>Área do avaliador</h2>
+    <p class="h2-sub">Prezado(a) parecerista: informe o código de avaliação recebido por e-mail para registrar seu parecer. Prazo: 03/09/2026.</p>
+    <div class="card">
+      <div id="passo-token">
+        <label for="input-token">Código de avaliação</label>
+        <input type="text" id="input-token" class="mono" placeholder="ex.: A1B2C3D4E5F6">
+        <button type="button" class="botao" onclick="abrirParecer()">Acessar avaliação</button>
+        <div id="erro-token"></div>
+      </div>
+
+      <div id="passo-parecer" style="display:none">
+        <div class="status-caixa" id="info-trabalho"></div>
+
+        <label style="margin-top:24px">Avaliação por critério</label>
+        <p class="hint">Atribua um conceito a cada critério: Muito Bom, Bom, Regular, Fraco ou Não se aplica.</p>
+        <div id="grade-notas"></div>
+
+        <label for="recomendacao">Recomendação *</label>
+        <select id="recomendacao">
+          <option value="">Selecione…</option>
+          <option>Aprovar</option>
+          <option>Aprovar com ressalvas</option>
+          <option>Não aprovar</option>
+        </select>
+
+        <label for="coment-autor">Comentários aos autores * <span class="opc">(obrigatório — mínimo 150 palavras)</span></label>
+        <textarea id="coment-autor" maxlength="10000" oninput="atualizarContador()"></textarea>
+        <p class="hint" id="contador-palavras">0 / 150 palavras (mínimo)</p>
+
+        <label for="coment-comissao">Comentários confidenciais à comissão <span class="opc">(opcional)</span></label>
+        <textarea id="coment-comissao" maxlength="3000"></textarea>
+
+        <button type="button" class="botao" id="btn-parecer" onclick="enviarParecer()">Registrar parecer</button>
+        <div id="resultado-parecer"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <strong>46ª Semad 2026</strong> · Semana do Administrador — DAD/UEM<br>
+    Universidade Estadual de Maringá · Maringá, Paraná<br>
+    Anais de edições anteriores: <a href="https://dad.uem.br/semad/45a-semad" target="_blank">dad.uem.br</a><br>
+    Dúvidas: semad@uem.br
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   ÚNICA CONFIGURAÇÃO NECESSÁRIA:
+   cole abaixo a URL do Aplicativo da Web (Apps Script).
+   Ela termina com /exec
+   ============================================================ */
+const SCRIPT_URL = "COLE_AQUI_A_URL_DO_APPS_SCRIPT";
+
+/* ---------- autores ---------- */
+let numAutores = 0;
+function adicionarAutor() {
+  numAutores++;
+  const div = document.createElement("div");
+  div.className = "autor-bloco";
+  div.innerHTML =
+    '<span class="tag">Autor ' + numAutores + (numAutores === 1 ? " · contato" : "") + '</span>' +
+    (numAutores > 1 ? '<button type="button" class="remover-autor" onclick="this.parentElement.remove()">remover</button>' : '') +
+    '<label>Nome completo *</label><input type="text" class="a-nome" maxlength="120">' +
+    '<label>E-mail *</label><input type="email" class="a-email" maxlength="120">' +
+    '<label>Instituição *</label><input type="text" class="a-inst" maxlength="160" placeholder="ex.: UEM">';
+  document.getElementById("autores").appendChild(div);
+}
+adicionarAutor();
+
+/* ---------- submissão ---------- */
+function coletarAutores() {
+  const blocos = document.querySelectorAll(".autor-bloco");
+  const lista = [];
+  for (const b of blocos) {
+    const nome = b.querySelector(".a-nome").value.trim();
+    const email = b.querySelector(".a-email").value.trim();
+    const inst = b.querySelector(".a-inst").value.trim();
+    if (!nome || !email || !inst) return null;
+    lista.push({ nome, email, instituicao: inst });
+  }
+  return lista.length ? lista : null;
+}
+
+function lerArquivoBase64(input) {
+  return new Promise((res, rej) => {
+    const f = input.files[0];
+    if (!f) return rej("Selecione o arquivo PDF.");
+    if (f.type !== "application/pdf") return rej("O arquivo deve ser PDF.");
+    if (f.size > 10 * 1024 * 1024) return rej("O arquivo excede 10 MB.");
+    const r = new FileReader();
+    r.onload = () => res(r.result.split(",")[1]);
+    r.onerror = () => rej("Falha ao ler o arquivo.");
+    r.readAsDataURL(f);
+  });
+}
+
+async function enviarSubmissao() {
+  const out = document.getElementById("resultado-submissao");
+  out.innerHTML = "";
+  const categoria = document.getElementById("categoria").value;
+  const area = document.getElementById("area").value;
+  const titulo = document.getElementById("titulo").value.trim();
+  const resumo = document.getElementById("resumo").value.trim();
+  const autores = coletarAutores();
+
+  if (!categoria || !area || !titulo || !resumo || !autores) {
+    out.innerHTML = '<div class="msg-erro">Preencha todos os campos obrigatórios (incluindo nome, e-mail e instituição de cada autor).</div>';
+    return;
+  }
+  if (!document.getElementById("decl-cega").checked || !document.getElementById("decl-normas").checked) {
+    out.innerHTML = '<div class="msg-erro">É necessário marcar as duas declarações para enviar.</div>';
+    return;
+  }
+
+  const btn = document.getElementById("btn-enviar");
+  btn.disabled = true; btn.textContent = "Enviando… aguarde";
+
+  try {
+    const arquivoBase64 = await lerArquivoBase64(document.getElementById("arquivo"));
+    const resp = await fetch(SCRIPT_URL, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify({
+        action: "submeter", categoria, area, titulo, resumo,
+        palavrasChave: document.getElementById("palavras").value.trim(),
+        autores, arquivoBase64
+      })
+    });
+    const dados = await resp.json();
+    if (dados.ok) {
+      out.innerHTML =
+        '<div class="msg-ok">Trabalho enviado com sucesso! Guarde seu ID:' +
+        '<span class="id">' + dados.id + '</span>' +
+        'Uma confirmação foi enviada ao e-mail do primeiro autor. Use o ID para consultar o status.</div>';
+      document.getElementById("form-submissao").querySelectorAll("input,select,textarea").forEach(el => {
+        if (el.type === "checkbox") el.checked = false;
+        else el.value = "";
+      });
+    } else {
+      out.innerHTML = '<div class="msg-erro">' + (dados.erro || "Erro ao enviar.") + '</div>';
+    }
+  } catch (e) {
+    out.innerHTML = '<div class="msg-erro">' + (typeof e === "string" ? e : "Erro de conexão. Verifique sua internet e tente novamente.") + '</div>';
+  } finally {
+    btn.disabled = false; btn.textContent = "Enviar trabalho";
+  }
+}
+
+/* ---------- consulta de status ---------- */
+async function consultarStatus() {
+  const id = document.getElementById("input-id").value.trim();
+  const out = document.getElementById("resultado-status");
+  if (!id) { out.innerHTML = '<div class="msg-erro">Informe o ID do trabalho.</div>'; return; }
+  out.innerHTML = '<p class="hint">Consultando…</p>';
+  try {
+    const resp = await fetch(SCRIPT_URL + "?action=status&id=" + encodeURIComponent(id));
+    const d = await resp.json();
+    if (!d.ok) { out.innerHTML = '<div class="msg-erro">' + d.erro + '</div>'; return; }
+    out.innerHTML =
+      '<div class="status-caixa">' +
+      '<strong>' + d.id + '</strong> — ' + d.titulo + '<br>' +
+      'Área: ' + d.area + '<br>' +
+      'Status: <strong>' + d.status + '</strong>' +
+      (d.dataResultado ? '<br>Resultado divulgado em: ' + d.dataResultado : '') +
+      '</div>';
+  } catch (e) {
+    out.innerHTML = '<div class="msg-erro">Erro na consulta. Tente novamente.</div>';
+  }
+}
+document.getElementById("input-id").addEventListener("keydown", e => { if (e.key === "Enter") consultarStatus(); });
+
+/* ---------- área do avaliador ---------- */
+let tokenAtual = "";
+let totalCriterios = 10;
+async function abrirParecer() {
+  const token = document.getElementById("input-token").value.trim();
+  const erro = document.getElementById("erro-token");
+  erro.innerHTML = "";
+  if (!token) { erro.innerHTML = '<div class="msg-erro">Informe o código de avaliação.</div>'; return; }
+  erro.innerHTML = '<p class="hint">Verificando…</p>';
+  try {
+    const resp = await fetch(SCRIPT_URL + "?action=parecer&token=" + encodeURIComponent(token));
+    const d = await resp.json();
+    if (!d.ok) { erro.innerHTML = '<div class="msg-erro">' + d.erro + '</div>'; return; }
+    tokenAtual = token;
+    totalCriterios = d.criterios.length;
+    erro.innerHTML = "";
+    document.getElementById("passo-token").style.display = "none";
+    document.getElementById("passo-parecer").style.display = "block";
+    document.getElementById("info-trabalho").innerHTML =
+      '<strong>' + d.id + '</strong> — ' + d.titulo + '<br>Área: ' + d.area;
+    const grade = document.getElementById("grade-notas");
+    grade.innerHTML = "";
+    const opcoes = '<option value="">Selecione…</option>' +
+      d.conceitos.map(c => '<option>' + c + '</option>').join('');
+    d.criterios.forEach((c, i) => {
+      grade.innerHTML +=
+        '<div class="criterio-bloco">' +
+        '<span class="criterio">' + (i + 1) + '. ' + c + '</span>' +
+        '<select class="conceito" id="conceito' + i + '">' + opcoes + '</select>' +
+        '</div>';
+    });
+  } catch (e) {
+    erro.innerHTML = '<div class="msg-erro">Erro de conexão. Tente novamente.</div>';
+  }
+}
+
+function contarPalavras(texto) {
+  return texto.trim().split(/\s+/).filter(p => p.length > 0).length;
+}
+
+function atualizarContador() {
+  const texto = document.getElementById("coment-autor").value;
+  const n = contarPalavras(texto);
+  const el = document.getElementById("contador-palavras");
+  el.textContent = n + " / 150 palavras (mínimo)";
+  el.style.color = n >= 150 ? "var(--verde)" : "var(--vermelho)";
+}
+
+async function enviarParecer() {
+  const out = document.getElementById("resultado-parecer");
+  out.innerHTML = "";
+  const conceitos = [];
+  for (let i = 0; i < totalCriterios; i++) {
+    const v = document.getElementById("conceito" + i).value;
+    if (!v) {
+      out.innerHTML = '<div class="msg-erro">Atribua um conceito a todos os ' + totalCriterios + ' critérios.</div>'; return;
+    }
+    conceitos.push(v);
+  }
+  if (conceitos.every(c => c === "Não se aplica")) {
+    out.innerHTML = '<div class="msg-erro">Ao menos um critério deve receber um conceito diferente de "Não se aplica".</div>'; return;
+  }
+  const recomendacao = document.getElementById("recomendacao").value;
+  if (!recomendacao) { out.innerHTML = '<div class="msg-erro">Selecione a recomendação.</div>'; return; }
+  const textoAutor = document.getElementById("coment-autor").value.trim();
+  const nPalavras = contarPalavras(textoAutor);
+  if (nPalavras < 150) {
+    out.innerHTML = '<div class="msg-erro">Os comentários aos autores são obrigatórios e devem conter no mínimo 150 palavras. Atualmente: ' + nPalavras + ' palavra(s).</div>'; return;
+  }
+
+  const btn = document.getElementById("btn-parecer");
+  btn.disabled = true; btn.textContent = "Registrando…";
+  try {
+    const resp = await fetch(SCRIPT_URL, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify({
+        action: "avaliar", token: tokenAtual, conceitos, recomendacao,
+        comentariosAutor: textoAutor,
+        comentariosComissao: document.getElementById("coment-comissao").value.trim()
+      })
+    });
+    const d = await resp.json();
+    if (d.ok) {
+      document.getElementById("passo-parecer").innerHTML =
+        '<div class="msg-ok">Parecer registrado com sucesso. A comissão científica agradece sua colaboração!</div>';
+    } else {
+      out.innerHTML = '<div class="msg-erro">' + (d.erro || "Erro ao registrar.") + '</div>';
+      btn.disabled = false; btn.textContent = "Registrar parecer";
+    }
+  } catch (e) {
+    out.innerHTML = '<div class="msg-erro">Erro de conexão. Tente novamente.</div>';
+    btn.disabled = false; btn.textContent = "Registrar parecer";
+  }
+}
+</script>
+</body>
+</html>
